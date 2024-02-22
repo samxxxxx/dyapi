@@ -14,7 +14,7 @@
 
 # 微信小程序Demo
 
-<img src="https://github.com/samxxxxx/dyapi/blob/main/img/mini258.jpg" title="小程序Demo" />
+![](https://github.com/samxxxxx/dyapi/blob/main/img/mini258.jpg)
 
 可保存视频到相册，生成无水印链接
 
@@ -56,4 +56,4 @@ dotnet ef database update
 
 完成，运行项目
 
-<img src="https://github.com/samxxxxx/dyapi/blob/main/img/swagger.png" title="接口" />
+![](https://github.com/samxxxxx/dyapi/blob/main/img/swagger.png)
