@@ -33,19 +33,19 @@ namespace DYApi.EntityframeworkCore
     //Unable to create an object of type 'AppDbContext'. For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
-        private readonly IConfiguration _configuration;
-
-        //public DesignTimeDbContextFactory(IConfiguration configuration)
-        //{
-        //    this._configuration = configuration;
-        //}
-
         public AppDbContext CreateDbContext(string[] args)
         {
-            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            //optionsBuilder.UseSqlServer("Server=.;Database=dydb;Trusted_Connection=True;TrustServerCertificate=true");
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
-            var connectionString = "server=127.0.0.1;port=3306;database=dydb;uid=root;password=.";
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, true)
+                .AddJsonFile($"appsettings.{environment}.json", optional: true)
+                .Build();
+
+            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+            var connectionString = configuration.GetConnectionString("Default");
+
             optionsBuilder.UseMySql(connectionString, MySqlServerVersion.AutoDetect(connectionString), optionsBuilder => optionsBuilder.EnableStringComparisonTranslations(true));
 
             return new AppDbContext(optionsBuilder.Options);
