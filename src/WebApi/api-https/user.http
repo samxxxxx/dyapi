@@ -1,0 +1,51 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+
+
+@hostname = localhost
+@port = 7003
+@authorization = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYWMzMjY0YmNjYWY0NmZjYjUxZmI4ZTc2ODZkOGVkMCIsInN1YiI6IjViNTQzM2UwLWM1MTgtNGE4NC04MzhlLTQ3NzdmYjNjMjBjZSIsInVuaXF1ZV9uYW1lIjoiYWRtaW4iLCJuYmYiOjE3MDgyMzY1OTQsImV4cCI6MTcxMDgyODU5NCwiaWF0IjoxNzA4MjM2NTk0fQ._Qj6o2rWMzUGM3oeLDdPi5RVAY1rQyie3hg9oGkOODU
+
+### 注册用户
+POST http://{{hostname}}:{{port}}/api/user/register
+Content-Type: application/json
+
+{
+  "userName": "admin",
+  "password": "123qweX"
+}
+
+### 用户密码登录
+POST http://{{hostname}}:{{port}}/api/user/login
+Content-Type: application/json
+
+{
+  "userName": "admin",
+  "password": "123qweX",
+  "code": ""
+}
+
+### 小程序
+POST http://{{hostname}}:{{port}}/api/user/login
+Content-Type: application/json
+
+{
+  "code": "0e1KvN000Vl1rR1WPa100xDnzS0KvN0f"
+}
+
+### 环境检查
+GET http://{{hostname}}:{{port}}/api/env/test
+Authorization: Bearer {{authorization}}
+
+### 设置用户分享码
+POST http://{{hostname}}:{{port}}/api/user/share
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "FromUser": "NzRGNzJFMjlGNDYxQTQwQw=="
+}
+
+### 获取解析记录
+GET http://{{hostname}}:{{port}}/api/parse/record
+Authorization: Bearer {{authorization}}

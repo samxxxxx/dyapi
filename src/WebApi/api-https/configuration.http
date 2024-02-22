@@ -1,0 +1,8 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@hostname = http://localhost:7003
+@authorization = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiZWRhZWZmNzc4NTE0NjBkOWI1OTg5NmJkZTlmYjRkMCIsInN1YiI6IjViNTQzM2UwLWM1MTgtNGE4NC04MzhlLTQ3NzdmYjNjMjBjZSIsInVuaXF1ZV9uYW1lIjoiYWRtaW4iLCJuYmYiOjE3MDUzMDUyODksImV4cCI6MTcwNzg5NzI4OSwiaWF0IjoxNzA1MzA1Mjg5fQ.XEKTEb-fFNS9pNy-TJEiNLlBdBNBGeGjhatQG1pPw0I
+
+### Ω‚ŒˆKey
+GET {{hostname}}/api/configuration/wechat
+Authorization: Bearer {{authorization}}

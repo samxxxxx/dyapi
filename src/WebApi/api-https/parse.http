@@ -1,0 +1,128 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@hostname = http://localhost:7003
+@authorization = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlYWMzMjY0YmNjYWY0NmZjYjUxZmI4ZTc2ODZkOGVkMCIsInN1YiI6IjViNTQzM2UwLWM1MTgtNGE4NC04MzhlLTQ3NzdmYjNjMjBjZSIsInVuaXF1ZV9uYW1lIjoiYWRtaW4iLCJuYmYiOjE3MDgyMzY1OTQsImV4cCI6MTcxMDgyODU5NCwiaWF0IjoxNzA4MjM2NTk0fQ._Qj6o2rWMzUGM3oeLDdPi5RVAY1rQyie3hg9oGkOODU
+
+### 登录
+POST {{hostname}}/api/user/login
+Content-Type: application/json
+
+{
+  "username":"admin",
+  "password":"123qweX"
+}
+
+### 微信配置
+GET {{hostname}}/api/configuration/wechat
+Authorization: Bearer {{authorization}}
+
+
+### 解析Key
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "6.61 复制打开抖音，看看【一米阳光照开来的图文作品】3年赚102万外卖小哥被打被质疑# 外卖小哥 # ... https://v.douyin.com/iLkwNhcs/ ufO:/ w@f.od 08/08"
+}
+
+### 解析抖音Key
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://v.douyin.com/iL4gTsVe/点击链接直接打开"
+}
+
+### 解析Key2
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "9.28 复制打开抖音，看看【大碗姐的作品】大家好，我是大碗姐，我从今年5月份开始接触说唱，从... https://v.douyin.com/iLkweNS1/ eOx:/ a@n.qE 05/062.82"
+}
+
+### 解析Key3
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "当我早上七点叫女友起来吃早餐#麦咖啡奶铁 https://www.iesdouyin.com/share/video/7316418665430158631/?region=CN&mid=7316418944175213362&u_code=3eji66dlakjk&titleType=title&life_share_ext=wyo80n%2FOK4Wb5DZs%2B711YDLHwrBXbUlriOiVoTKBmdxpXaqUirwL5lGujUOnbMQiATqmpvcOAaHh%0Anf9qe07J%2BiYK09LomLnLFt02tNmFyZXUmwExp9fiBlTryXaFC5Ai%0A&life_anchor_type=2&utm_source=copy&utm_campaign=client_share&utm_medium=android&app=aweme 复制此链接，打开【抖音短视频】，直接观看视频！"
+}
+
+### 解析Key3
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://www.iesdouyin.com/share/microapp/?token=dcbf94bc86d3125d0f9cafcf8ce9d921&share_channel=copy"
+}
+
+
+### 解析Key4
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareTimeline"
+}
+
+### 解析bilibili
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "   https://b23.tv/XOXPR2p 会302到 2"
+}
+
+### 西瓜解析
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://v.ixigua.com/iL4uec5x/点击链接直接打开"
+}
+
+
+### 快手解析
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://v.kuaishou.com/jjL9V9 刘邦为什么是所有帝王里面最厉害的 该作品在快手被播放过63.3万次，点击链接，打开【快手】直接观看！"
+}
+
+### 快手解析2
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://v.kuaishou.com/nCvRap 害怕天黑 因为就我自己 该作品在快手被播放过60.7万次，点击链接，打开【快手】直接观看！"
+}
+
+### 头条解析
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://m.toutiao.com/is/iLu4dkQM/?= 相扑选手做的猪排饭，每份炸猪排1公斤，不争气的眼泪从嘴角流下 - 今日头条"
+}
+
+### 小米视频解析
+POST {{hostname}}/api/parse
+Content-Type: application/json
+Authorization: Bearer {{authorization}}
+
+{
+  "key": "https://m.video.xiaomi.com/resolve/h5vue/h5_vue?seg=%2Fshare%2Fsj-2fengxing_243771111"
+}
