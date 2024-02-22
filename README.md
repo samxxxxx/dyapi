@@ -14,4 +14,4 @@
 
 # 微信小程序Demo
 
-<img src="https://github.com/samxxxxx/dyapi/tree/main/img/mini258.jpg" title="小程序Demo" />
+<img src="https://github.com/samxxxxx/dyapi/blob/main/img/mini258.jpg" title="小程序Demo" />
