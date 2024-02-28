@@ -57,3 +57,9 @@ dotnet ef database update
 完成，运行项目
 
 ![](https://github.com/samxxxxx/dyapi/blob/main/img/swagger.png)
+
+# 开发者
+
+<a href="https://github.com/samxxxxx/dyapi/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=samxxxxx/dyapi" />
+</a>
